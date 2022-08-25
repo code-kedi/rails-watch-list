@@ -1,0 +1,8 @@
+<p style="color: green"><%= notice %></p>
+<h1>Create a new list</h1>
+<%= simple_form_for(@list) do |f| %>
+  <%= f.input :name %>
+  <%= f.submit class: "btn btn-primary"%>
+<% end %>
+<hr>
+<%= link_to "See all my lists", lists_path %>

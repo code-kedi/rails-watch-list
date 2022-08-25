@@ -1,0 +1,9 @@
+<p style="color: green"><%= notice %></p>
+<h1>Create a new bookmark</h1>
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :comment %>
+  <%= f.association :movie %>
+  <%= f.submit class: "btn btn-primary"%>
+<% end %>
+<hr>
+<%= link_to "See all my bookmarks", list_bookmark_path %>
