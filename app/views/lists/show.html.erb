@@ -1,12 +1,15 @@
-<h1> <%= @list.name %></h1>
-<h2>Bookmarks:</h2>
+<h1> List: <%= @list.name %></h1>
+<h2>Movies:</h2>
 <ul>
   <% @list.bookmarks.each do |bookmark| %>
     <%# we can say @list.bookmarks because in list.rb we say has_many :bookmarks %>
-    <li><%= bookmark.comment %>
+    <li>
+    <p><%= bookmark.movie.title %></p>
+    <p><%= bookmark.movie.overview %></p>
+    <p><%= bookmark.comment %>
         <%= link_to "Delete",
             bookmark_path(bookmark),
-            data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
+            data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p></li>
   <% end %>
 </ul>
 <hr>
